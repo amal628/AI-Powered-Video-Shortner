@@ -1,0 +1,13 @@
+{
+  "name": "ai_powered_video_shortener",
+  "version": "1.0.0",
+  "description": "Transform long videos into engaging short-form content automatically with AI. Perfect for content creators, marketers, and social media managers.",
+  "main": "test_server_connection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

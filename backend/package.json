@@ -1,0 +1,17 @@
+{
+  "name": "ai_powered_video_shortener",
+  "version": "1.0.0",
+  "description": "Transform long videos into engaging short-form content automatically with AI.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start:backend": "node index.js",
+    "start:frontend": "cd ../frontend && npm run dev",
+    "start:all": "concurrently -n BACKEND,FRONTEND -c blue,green \"npm run start:backend\" \"npm run start:frontend\"",
+    "build:frontend": "cd ../frontend && npm run build",
+    "start:prod": "npm run build:frontend && node index.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

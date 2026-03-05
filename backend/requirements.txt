@@ -1,0 +1,28 @@
+# Core Web Framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# AI / ML
+# IMPORTANT: Install with CUDA support for GPU acceleration
+# For NVIDIA GPU (CUDA 12.1): pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# For NVIDIA GPU (CUDA 11.8): pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# CPU only (current): pip install torch torchvision torchaudio
+torch
+torchaudio
+openai-whisper
+transformers
+sentencepiece # CRITICAL for BART/T5
+protobuf     # CRITICAL for BART/T5
+spacy        # For segment selection
+
+# Video / Audio Processing
+ffmpeg-python
+librosa      # For beat detection and audio analysis
+opencv-python # For scene change and motion detection
+numpy        # For numerical operations
+scipy        # For signal processing
+
+# Utilities
+python-dotenv
+aiofiles

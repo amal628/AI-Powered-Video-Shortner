@@ -1,0 +1,464 @@
+/* frontend/src/components/SubtitleControls.css */
+
+.subtitle-controls {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.subtitle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subtitle-header h4 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.settings-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.settings-toggle:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.settings-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Settings Panel */
+.subtitle-settings {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.setting-group {
+    margin-bottom: 1.5rem;
+}
+
+.setting-group label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.setting-group input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color var(--transition-normal);
+}
+
+.setting-group input[type="number"]:hover {
+    border-color: var(--primary-color);
+}
+
+.setting-group input[type="number"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.setting-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.language-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.language-option input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Status Information */
+.subtitle-status {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.status-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 160px;
+}
+
+.status-value {
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+}
+
+.status-value.available {
+    background: rgba(20, 184, 166, 0.2);
+    color: var(--primary-light);
+    border: 1px solid rgba(20, 184, 166, 0.4);
+}
+
+.status-value.none {
+    background: rgba(251, 113, 133, 0.2);
+    color: var(--error-color);
+    border: 1px solid rgba(251, 113, 133, 0.4);
+}
+
+.track-list, .file-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.track-badge, .file-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Actions */
+.subtitle-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.action-group {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+}
+
+.action-group h5 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-buttons, .language-actions, .control-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.action-button, .language-button, .control-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-button.generate-btn {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.action-button.generate-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.action-button.extract-btn {
+    background: rgba(20, 184, 166, 0.2);
+    color: var(--primary-light);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+.action-button.extract-btn:hover:not(:disabled) {
+    background: rgba(20, 184, 166, 0.3);
+    border-color: rgba(20, 184, 166, 0.5);
+}
+
+.language-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.language-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.control-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.control-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.clear-btn {
+    background: rgba(251, 113, 133, 0.2);
+    color: var(--error-color);
+    border: 1px solid rgba(251, 113, 133, 0.3);
+}
+
+.clear-btn:hover:not(:disabled) {
+    background: rgba(251, 113, 133, 0.3);
+    border-color: rgba(251, 113, 133, 0.5);
+}
+
+.action-button:disabled, .language-button:disabled, .control-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Processing Indicator */
+.processing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-left: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ===== YouTube-Style Subtitle Styling ===== */
+.video-with-subtitles {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-subtitle-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.subtitle-container {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-fast);
+    animation: subtitleFadeIn 0.3s ease-out;
+}
+
+.subtitle-container.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: subtitleFadeOut 0.3s ease-in;
+}
+
+.subtitle-text {
+    color: white;
+    font-size: clamp(14px, 2.5vw, 20px);
+    font-weight: 600;
+    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+    text-align: center;
+    white-space: pre-line;
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.subtitle-text::selection {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* YouTube-style subtitle positioning and sizing */
+@media (max-width: 768px) {
+    .subtitle-container {
+        padding: 8px 12px;
+        bottom: 15px;
+        width: 95%;
+    }
+    
+    .subtitle-text {
+        font-size: clamp(12px, 3vw, 16px);
+        line-height: 1.2;
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subtitle-container {
+        padding: 6px 10px;
+        bottom: 10px;
+        width: 98%;
+    }
+    
+    .subtitle-text {
+        font-size: clamp(10px, 3.5vw, 14px);
+        line-height: 1.1;
+        max-height: 80px;
+    }
+}
+
+/* Subtitle animations */
+@keyframes subtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .subtitle-controls {
+        padding: 1rem;
+    }
+    
+    .subtitle-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .action-buttons, .language-actions, .control-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .action-button, .language-button, .control-button {
+        width: 100%;
+    }
+    
+    .setting-group {
+        margin-bottom: 1rem;
+    }
+    
+    .language-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .subtitle-controls {
+        padding: 0.75rem;
+    }
+    
+    .subtitle-settings {
+        padding: 1rem;
+    }
+    
+    .language-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .status-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .status-label {
+        min-width: auto;
+    }
+}

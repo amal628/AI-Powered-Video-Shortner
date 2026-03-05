@@ -1,0 +1,288 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #ff7a18;
+    --primary-dark: #cf5100;
+    --primary-light: #ffbe88;
+    --secondary-color: #2ac9a3;
+    --accent-color: #ffd166;
+
+    --primary-gradient: linear-gradient(120deg, #ff7a18 0%, #2ac9a3 100%);
+    --secondary-gradient: linear-gradient(130deg, #2ac9a3 0%, #ffd166 100%);
+    --accent-gradient: linear-gradient(120deg, #ffd166 0%, #ff7a18 100%);
+
+    --bg-primary: #07121b;
+    --bg-secondary: #0d1f2c;
+    --bg-tertiary: #142d3f;
+    --bg-card: rgba(255, 255, 255, 0.04);
+
+    --text-primary: #f4fbff;
+    --text-secondary: #b6cad7;
+    --text-muted: #86a4b8;
+
+    --success-color: #34d399;
+    --success-bg: rgba(52, 211, 153, 0.12);
+    --error-color: #f87171;
+    --error-bg: rgba(248, 113, 113, 0.12);
+    --warning-color: #fbbf24;
+    --warning-bg: rgba(251, 191, 36, 0.1);
+    --info-color: #60a5fa;
+    --info-bg: rgba(96, 165, 250, 0.12);
+
+    --shadow-sm: 0 4px 12px rgba(2, 8, 14, 0.28);
+    --shadow-md: 0 10px 24px rgba(2, 8, 14, 0.34);
+    --shadow-lg: 0 22px 46px rgba(2, 8, 14, 0.42);
+    --shadow-xl: 0 30px 60px rgba(2, 8, 14, 0.48);
+    --shadow-glow: 0 0 34px rgba(255, 122, 24, 0.18);
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    --transition-fast: 0.18s cubic-bezier(0.2, 0.7, 0.2, 1);
+    --transition-normal: 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+    --transition-slow: 0.48s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: radial-gradient(circle at 0% 0%, #0f2434 0%, #07121b 45%, #050d15 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    letter-spacing: 0.008em;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+
+body::before {
+    background:
+        radial-gradient(circle at 78% 8%, rgba(255, 122, 24, 0.24) 0%, transparent 34%),
+        radial-gradient(circle at 14% 78%, rgba(42, 201, 163, 0.2) 0%, transparent 38%);
+}
+
+body::after {
+    z-index: -1;
+    opacity: 0.32;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff7a18, #2ac9a3);
+    border-radius: var(--radius-full);
+}
+
+::selection {
+    background: rgba(255, 122, 24, 0.36);
+    color: #ffffff;
+}
+
+a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: #ffe1c4;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 clamp(14px, 2vw, 22px);
+}
+
+.text-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-card {
+    background: linear-gradient(170deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.58;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.55s ease forwards;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.5s ease forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.animate-float {
+    animation: float 3.2s ease-in-out infinite;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: clamp(1.45rem, 4vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: clamp(1.1rem, 2.8vw, 1.55rem);
+    font-weight: 700;
+}
+
+p {
+    font-size: clamp(0.9rem, 1.8vw, 1.02rem);
+    color: var(--text-secondary);
+}
+
+button {
+    font-family: 'Manrope', sans-serif;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all var(--transition-normal);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+    background-size: 220% 100%;
+    animation: shimmer 1.4s infinite;
+    border-radius: var(--radius-sm);
+}
